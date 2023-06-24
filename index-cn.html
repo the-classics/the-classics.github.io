@@ -1,0 +1,411 @@
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.2">
+
+<title>听书</title>
+<link rel="icon" type="image/png" href="https://the-classics.github.io/icon-128-cn.png">
+
+<meta property="og:title" content="听书"> <meta property="og:url" content="https://the-classics.github.io/index-cn.html"> <meta property="og:image" content="https://the-classics.github.io/icon-128-cn.png"> <meta property="og:description" content="Some useful links.">
+
+<style>
+#blink {
+font-size: 20px;
+font-weight: bold;
+color: #2d38be;
+                transition: 0.5s;
+}
+</style>
+        
+<style>
+/* unvisited link */
+a:link {
+  color: #07519a;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+
+<style type="text/css">
+
+
+a.NoUrl {
+	color: gray;
+}
+
+a {
+	color: #07519a;
+	text-decoration: none;
+}
+
+</style>
+
+<style>
+* {
+  box-sizing:border-box;
+}
+
+.left {
+ /* background-color:#2196F3; */
+  padding:20px;
+  float:left;
+  width:30%; /* The width is 20%, by default */
+}
+
+.main {
+  /* background-color:#f1f1f1; */
+  padding:20px;
+  float:left;
+  width:40%; /* The width is 60%, by default */
+}
+
+.right {
+  /* background-color:#4CAF50;*/
+  padding:20px;
+  float:left;
+  width:30%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:200px) {
+  .left, .main, .right {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
+
+<link rel="stylesheet" href="https://math-examples.github.io/web/math-examples.css">
+
+<script src="https://math-examples.github.io/web/math-examples.js"></script>
+
+<script src="https://math-examples.github.io/web/requestUserRepoContent.js"></script>
+
+</head>
+
+<body>
+   
+<p>你是第<img width="20" height="20" src="http://stuff.mit.edu/cgi/counter/the-classics.github.io/Chinese" alt="several">个访问者，欢迎!😁😁</p>
+<p id="displayTime"></p>
+
+<p id="blink">
+🍉🍊🏖</p>
+
+<script type="text/javascript">
+var blink = document.getElementById('blink');
+            setInterval(function() {
+                blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+            }, 1500);
+</script>
+        
+<div>
+
+<button class="button" id="resizeText1" onclick="resizeText(1)">字体➕️</button>
+
+<button class="button" id="resizeText2" onclick="resizeText(-1)">字体➖️</button>
+
+</div>
+
+<h3 id="Videos3" align="center">音频</h3>
+<span class="warn">播放步骤：<br>第一步：点开要播放的音频名字。<br>
+第二步：等待半分钟左右就会播放。<br>
+注意：如果不能播放，那就是还在下载。<br>
+可以先听其它的，等几分钟再听这个。<br>
+一遍播放完会自动单曲循环播放。</span>
+
+<div id='book1'
+data-prefix='https://ChineseBooks.github.io/nature-sounds'>
+<h4><a href="javascript:showList('book1')">聆听大自然的声音</a></h4>
+</div>
+
+<div id='book17'
+data-prefix='https://ChineseBooks.github.io/yzt-zzbj-audio'>
+<h4><a href="javascript:showList('book17')">易中天讲先秦诸子百家争鸣</a></h4>
+</div>
+
+<div id='book20'
+data-prefix='https://ChineseBooks.github.io/wlq-qsh-audio'>
+<h4><a href="javascript:showList('book20')">王立群读《史记》之秦始皇</a></h4>
+</div>
+
+<div id='book21'
+data-prefix='https://ChineseBooks.github.io/wlq-xy-audio'>
+<h4><a href="javascript:showList('book21')">王立群讲项羽</a></h4>
+</div>
+
+<div id='book22'
+data-prefix='https://ChineseBooks.github.io/wlq-lb-audio'>
+<h4><a href="javascript:showList('book22')">王立群讲刘邦</a></h4>
+</div>
+
+<div id='book23'
+data-prefix='https://ChineseBooks.github.io/wlq-hwd-audio'>
+<h4><a href="javascript:showList('book23')">王立群读《史记》之汉武帝</a></h4>
+</div>
+
+<div id='book16'
+data-prefix='https://ChineseBooks.github.io/yzt-sg-audio'>
+<h4><a href="javascript:showList('book16')">易中天品三国</a></h4>
+</div>
+
+
+<div id='book11'
+data-prefix='https://ChineseBooks.github.io/ddj-audio'>
+<h4><a href="javascript:showList('book11')">《道德经》原文朗读</a></h4>
+</div>
+
+<div id='book12'
+ data-prefix='https://ChineseBooks.github.io/zsq-ddj-audio'>
+<h4><a href="javascript:showList('book12')">曾仕强讲《道德经》</a></h4>
+</div>
+
+<div id='book13'
+ data-prefix='https://ChineseBooks.github.io/zsq-yj-audio'>
+<h4><a href="javascript:showList('book13')">曾仕强讲《易经》</a></h4>
+</div>
+
+<div id='book14'
+data-prefix='https://ChineseBooks.github.io/zsq-sgyy-audio'>
+<h4><a href="javascript:showList('book14')">曾仕强讲《三国演义》</a></h4>
+</div>
+
+<div id='book15'
+data-names='names.txt'
+data-prefix='https://ChineseBooks.github.io/zsq-hdnj-audio'>
+<h4><a href="javascript:showList('book15')">了不起的《黄帝内经》（百家讲坛）</a></h4>
+</div>
+
+<div id='book19'
+data-prefix='https://ChineseBooks.github.io/wlq-ss-audio'>
+<h4><a href="javascript:showList('book19')">王立群读宋史</a></h4>
+</div>
+
+<div id='book18'
+data-prefix='https://ChineseBooks.github.io/yldd-audio'>
+<h4><a href="javascript:showList('book18')">永乐大帝（百家讲坛）</a></h4>
+</div>
+
+<h3 id="Videos33" align="center">名著</h3>
+
+<ol id="userReposContent"></ol>
+
+<h3 id="Links" align="center"><a href="https://the-classics.github.io/index-eng.html">英语</a></h3>
+
+<script>
+async function downloadFileAsArray(href) {
+    if(!href){return "";}
+	let response = await fetch(href);
+		
+	if(response.status != 200) {
+		throw new Error("Server Error");
+	}
+		
+	// read response stream as text
+	let text_data = await response.text();
+const data = text_data.split(/\r?\n/).filter(element => element);
+	return data;
+}
+
+function setGolbalVarByName(name, value){
+    let f = new Function('x', `${name} = x;`);
+    f(value);
+}
+
+function getArrayEleByArrayName(arrName, i){
+    let f = new Function(`return ${arrName}[${i}];`);
+    return f();
+}
+
+function getUrl(pid, i){
+const par = document.getElementById(pid);
+const prefix = par.getAttribute("data-prefix");
+const glist = pid+'list';
+let f = new Function(`return ${glist}[${i-1}];`);
+const url =`${prefix}/${f()}`;
+return url;
+}
+
+async function nextAudioTagAsync(pid){
+    let par = document.getElementById(pid);
+    let prefix = par.getAttribute("data-prefix");
+    const href=`${prefix}/list.txt`;
+    const list = await downloadFileAsArray(href);
+    par.setAttribute("data-n", list.length);
+    const glist = pid+'list';
+    setGolbalVarByName(glist, list);
+    
+    let names = par.getAttribute("data-names");
+    if(names){
+        const hname=`${prefix}/${names}`;
+        names = await downloadFileAsArray(hname);
+        const gnames = pid+'names';
+        if(list.length===names.length){
+            setGolbalVarByName(gnames, names);
+        }else par.setAttribute("data-names", '');
+    }
+    nextAudioTag(pid, 1);
+}
+
+function showList(pid){
+    let par = document.getElementById(pid);
+    let c = par.getAttribute("data-clicked");
+    if(!c){
+        par.setAttribute("data-clicked", 1);
+        nextAudioTagAsync(pid);
+    }
+}
+
+function padWithZero(num, targetLength) {
+  let str = String(num);
+
+  while (str.length < targetLength) {
+    str = '0' + str;
+  }
+
+  return str;
+}
+
+function next(str){
+    var m = str.match(/\d+/g);
+    if(!m || m.length<1)return;
+    var s0 = m[m.length-1];
+    var num = parseInt(s0);
+    num+=1;
+    var s2 = ''+num;
+    var l2 = s2.length;
+    if(s0.length<l2)l2 = s0.length;
+    var s1 = str.substring(0, str.length-l2);
+    if(s1)s2 = s1 + s2;
+    return s2;
+}
+
+let nmin = 10;
+
+function nextAudioTag(pid, which){
+    let par = document.getElementById(pid);
+    let ol = par.querySelector('ul');
+    if(ol===null){
+        let div = document.createElement('div');
+        div.className = 'cur-audio';
+        par.appendChild(div);
+        let divbtn = document.createElement('div');
+        par.appendChild(divbtn);
+        divbtn.innerHTML = (`
+<button class="button" onclick="nextAudioTag('${pid}', -1)">上一页</button>
+<button class="button" onclick="nextAudioTag('${pid}', 1)">下一页</button>
+`);
+        ol = document.createElement('ul');
+        par.appendChild(ol);
+    }
+    
+    while(ol.firstChild) {
+        ol.removeChild(ol.firstChild);
+    }
+    let n = parseInt(par.getAttribute("data-n"));
+    let getUrlCb = par.getAttribute("data-urlcb");
+    if(!getUrlCb)getUrlCb='getUrl';
+    getUrlCb = new Function('pid', 'x', `return ${getUrlCb}(pid, x);`);
+    let gp = par.getAttribute("data-page");
+    if(gp===null)gp=0;
+    else gp=parseInt(gp);
+    gp=gp+which;
+    //alert(typeof gp);
+    if(gp<1)gp = Math.ceil(n/nmin);
+    if((gp-1)*nmin>=n)gp =1;
+    par.setAttribute("data-page", gp);
+    
+for (let j = 1; j <= nmin; ++j) {
+let i = (gp-1)*nmin + j;
+if(i>n){break;}
+let url = getUrlCb(pid, i);
+
+//alert(data[i].download_url);
+//alert(data[i].name);
+        // for (let i in data) {
+
+let li = document.createElement('li');
+
+let link = url;
+let isfile =1;
+        // var name = data[i].name.split('-').pop();
+
+var name;
+let names = par.getAttribute("data-names");
+if(names){
+            const gnames = pid+'names';
+            let f = new Function(`return ${gnames}[${i-1}];`);
+            name = f();
+}else{
+name = url.split('/').pop();
+            //alert(name);
+if(isfile){
+    if (name.charAt(0) =='\('){
+            let ii = name.indexOf('\)');
+            if(ii+1<name.length)name = name.substr(ii+1);
+        }
+var ilast = name.lastIndexOf('.');
+if(ilast>0)name = name.substring(0, ilast);
+}
+}
+
+            // Create the html markup for each li
+
+//metadata
+//            <p><a class="audio" href="${link}">${name}</a></p>
+            li.innerHTML = (`
+<p><a class="audio" href="javascript:setAudio('${pid}', '${link}', '${name}')">${name}</a></p>
+`);
+
+            
+
+            // Append each li to the ul
+
+            ol.appendChild(li);
+} // end for
+
+}
+
+//requestUserRepoContent('the-classics', 'Chinese');
+
+function setAudio(pid, link, name){
+    let par = document.getElementById(pid);
+    let div = par.querySelector('.cur-audio');
+    while(div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+    //muted
+    div.innerHTML = (`
+<figure>
+    <figcaption id='aname'>${name}</figcaption>
+    <audio controls loop autoplay>
+        <source id='asrc' src="${link}" type="audio/ogg">
+            <a class="audio" id='ahref' href="${link}">
+                下载音频
+            </a>
+    </audio>
+</figure>
+`);
+let au = par.querySelector('audio');
+au.play();
+    
+}
+</script>
+
+</body>
+
+</html>

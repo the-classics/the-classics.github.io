@@ -1,0 +1,275 @@
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.2">
+
+<title>English</title>
+<link rel="icon" type="image/png" href="https://the-classics.github.io/icon-128-eng.png">
+
+<meta property="og:title" content="English"> <meta property="og:url" content="https://the-classics.github.io/index-eng.html"> <meta property="og:image" content="https://the-classics.github.io/icon-128-eng.png"> <meta property="og:description" content="Some useful links.">
+
+<style>
+#blink {
+font-size: 20px;
+font-weight: bold;
+color: #2d38be;
+                transition: 0.5s;
+}
+</style>
+        
+<style>
+/* unvisited link */
+a:link {
+  color: #07519a;
+}
+
+/* visited link */
+a:visited {
+  color: red;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+</style>
+
+<style type="text/css">
+
+
+a.NoUrl {
+	color: gray;
+}
+
+a {
+	color: #07519a;
+	text-decoration: none;
+}
+
+</style>
+
+<style>
+* {
+  box-sizing:border-box;
+}
+
+.left {
+ /* background-color:#2196F3; */
+  padding:20px;
+  float:left;
+  width:30%; /* The width is 20%, by default */
+}
+
+.main {
+  /* background-color:#f1f1f1; */
+  padding:20px;
+  float:left;
+  width:40%; /* The width is 60%, by default */
+}
+
+.right {
+  /* background-color:#4CAF50;*/
+  padding:20px;
+  float:left;
+  width:30%; /* The width is 20%, by default */
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:200px) {
+  .left, .main, .right {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
+
+<link rel="stylesheet" href="https://math-examples.github.io/web/math-examples.css">
+
+<script src="https://math-examples.github.io/web/math-examples.js"></script>
+
+<script src="https://math-examples.github.io/web/requestUserRepoContent.js"></script>
+
+</head>
+
+<body>
+   
+<p>你是第<img width="20" height="20" src="http://stuff.mit.edu/cgi/counter/the-classics.github.io/English" alt="several">个访问者，欢迎!😁😁</p>
+<p id="displayTime"></p>
+
+<p id="blink">
+🍉🍊🏖</p>
+
+<script type="text/javascript">
+var blink = document.getElementById('blink');
+            setInterval(function() {
+                blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+            }, 1500);
+</script>
+        
+<div>
+
+<button class="button" id="resizeText1" onclick="resizeText(1)">字体➕️</button>
+
+<button class="button" id="resizeText2" onclick="resizeText(-1)">字体➖️</button>
+
+</div>
+
+<h3 id="Videos3" align="center">英语音频</h3>
+
+<div id='book11' data-n='104' data-urlcb='getUrl11'>
+<h4 id="">101 Conversations in Simple English</h4>
+</div>
+<script>
+function getUrl11(i){
+const prefix = `https://the-classics.github.io/eng-data/101-Conversations-in-Simple-English/`;
+
+const suf = `.ogg`;
+const index = padWithZero(i, 3);
+let url = prefix + index + suf;
+return url;
+}
+</script>
+
+<h3 id="Videos33" align="center">英语</h3>
+
+<ol id="userReposContent"></ol>
+
+<h3 id="Links" align="center"><a href="https://the-classics.github.io/index-kor.html">韩语</a></h3>
+
+<script>
+function padWithZero(num, targetLength) {
+  let str = String(num);
+
+  while (str.length < targetLength) {
+    str = '0' + str;
+  }
+
+  return str;
+}
+
+function next(str){
+    var m = str.match(/\d+/g);
+    if(!m || m.length<1)return;
+    var s0 = m[m.length-1];
+    var num = parseInt(s0);
+    num+=1;
+    var s2 = ''+num;
+    var l2 = s2.length;
+    if(s0.length<l2)l2 = s0.length;
+    var s1 = str.substring(0, str.length-l2);
+    if(s1)s2 = s1 + s2;
+    return s2;
+}
+
+let nmin = 5;
+
+function nextAudioTag(pid, which){
+    let par = document.getElementById(pid);
+    let ol = par.querySelector('ul');
+    if(ol===null){
+        let div = document.createElement('div');
+        div.className = 'cur-audio';
+        par.appendChild(div);
+        let divbtn = document.createElement('div');
+        par.appendChild(divbtn);
+        divbtn.innerHTML = (`
+<button class="button" onclick="nextAudioTag('${pid}', -1)">上一页</button>
+<button class="button" onclick="nextAudioTag('${pid}', 1)">下一页</button>
+`);
+        ol = document.createElement('ul');
+        par.appendChild(ol);
+    }
+    
+    while(ol.firstChild) {
+        ol.removeChild(ol.firstChild);
+    }
+    let n = parseInt(par.getAttribute("data-n"));
+    let getUrlCb = par.getAttribute("data-urlcb");
+    getUrlCb = new Function('x', `return ${getUrlCb}(x);`);
+    let gp = par.getAttribute("data-page");
+    if(gp===null)gp=0;
+    else gp=parseInt(gp);
+    gp=gp+which;
+    //alert(typeof gp);
+    if(gp<1)gp = Math.ceil(n/nmin);
+    if((gp-1)*nmin>=n)gp =1;
+    par.setAttribute("data-page", gp);
+    
+for (let j = 1; j <= nmin; ++j) {
+let i = (gp-1)*nmin + j;
+if(i>n){break;}
+let url = getUrlCb(i);
+
+//alert(data[i].download_url);
+//alert(data[i].name);
+        // for (let i in data) {
+
+let li = document.createElement('li');
+
+let link = url;
+let isfile =1;
+        // var name = data[i].name.split('-').pop();
+
+        var name = url.split('/').pop();
+//alert(name);
+if(isfile){
+    if (name.charAt(0) =='\('){
+            let ii = name.indexOf('\)');
+            if(ii+1<name.length)name = name.substr(ii+1);
+        }
+var ilast = name.lastIndexOf('.');
+if(ilast>0)name = name.substring(0, ilast);
+}
+            // Create the html markup for each li
+
+//metadata
+//            <p><a class="audio" href="${link}">${name}</a></p>
+            li.innerHTML = (`
+<p><a class="audio" href="javascript:setAudio('${pid}', '${link}', '${name}')">${name}</a></p>
+`);
+
+            
+
+            // Append each li to the ul
+
+            ol.appendChild(li);
+} // end for
+
+}
+
+requestUserRepoContent('the-classics', 'English');
+nextAudioTag('book11', 1);
+
+
+function setAudio(pid, link, name){
+    let par = document.getElementById(pid);
+    let div = par.querySelector('.cur-audio');
+    while(div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+    div.innerHTML = (`
+<figure>
+    <figcaption id='aname'>${name}</figcaption>
+    <audio controls loop autoplay>
+        <source id='asrc' src="${link}" type="audio/ogg">
+            <a class="audio" id='ahref' href="${link}">
+                下载音频
+            </a>
+    </audio>
+</figure>
+`);
+let au = par.querySelector('audio');
+au.play();
+}
+</script>
+
+</body>
+
+</html>
